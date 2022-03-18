@@ -74,7 +74,7 @@
 }
 
 .brand-image-container {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   height: "3rem";
   margin-top: ".5rem";
 }
@@ -86,7 +86,7 @@
 
 .discount-details {
   color: var(--secondary-color);
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 @media screen and (max-width: 750px) {

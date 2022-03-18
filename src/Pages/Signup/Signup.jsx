@@ -1,5 +1,4 @@
 import React from 'react';
-// import "../Login/Auth.css"
 import { Link } from 'react-router-dom';
 import "../Signup/Signup.css"
 
