@@ -1,0 +1,47 @@
+.nav-bar{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.nav-links {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    margin-left: 2em;
+}
+
+.nav-bar_section--align-end{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icon{
+    color: var(--primary-color);
+    margin-right: 1rem;
+    font-size: 1.1rem;
+}
+
+.nav-bar_action-item{
+    display: none;
+}
+
+.search-container{
+   margin-top: 1.5rem;
+   width: 25rem;
+   margin-right: 8rem;
+}
+
+.search{
+    height: 2.5rem;
+    border-radius: .5rem;
+}
+
+.logo-container{
+    width:'9rem';
+}
+
+.logo{
+    height: 3.2rem;
+}
