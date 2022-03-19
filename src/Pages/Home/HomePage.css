@@ -73,15 +73,9 @@
   width: 14rem;
 }
 
-.brand-image-container {
-  margin-top: 0.5rem;
-  height: "3rem";
-  margin-top: ".5rem";
-}
-
 .brand-image {
-  width: "6.5rem";
-  height: "2.5rem";
+  width: 6.5rem;
+  height: 2.5rem;
 }
 
 .discount-details {

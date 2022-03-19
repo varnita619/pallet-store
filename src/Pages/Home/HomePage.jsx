@@ -8,7 +8,7 @@ function Home() {
         <div>
             <div className="banner">
                 <img src="https://res.cloudinary.com/dqgqdj4jf/image/upload/v1647587862/banner/home_xci4gu.gif"
-                    alt="" />
+                    alt="banner" />
                 <div className="btn-container">
 
                     <Link to='/productlisting'><button className="twin-btn">Shop Now</button></Link>
@@ -28,7 +28,7 @@ function Home() {
                             <span>New collection</span>
                         </div>
                         <div className="brand-image-container">
-                            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1200px-H%26M-Logo.svg.png' style={{ width: '6.5rem', height: '2.5rem' }} className='brand-image'></img>
+                            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1200px-H%26M-Logo.svg.png' className='brand-image'></img>
 
                         </div>
                         <span className='discount-details'>Upto 30% Off</span>
@@ -50,7 +50,7 @@ function Home() {
                             <span>New collection</span>
                         </div>
                         <div className="brand-image-container">
-                            <img src='https://pngimg.com/uploads/gucci/gucci_PNG22.png' style={{ width: '6.5rem', height: '2.5rem' }} className='brand-image'></img>
+                            <img src='https://pngimg.com/uploads/gucci/gucci_PNG22.png' className='brand-image'></img>
 
                         </div>
                         <span className='discount-details'>Upto 30% Off</span>
@@ -73,7 +73,7 @@ function Home() {
                             <span>New collection</span>
                         </div>
                         <div className="brand-image-container">
-                            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Levi%27s_logo.svg/2560px-Levi%27s_logo.svg.png' style={{ width: '6.5rem', height: '2.5rem' }} className='brand-image'></img>
+                            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Levi%27s_logo.svg/2560px-Levi%27s_logo.svg.png' className='brand-image'></img>
                         </div>
                         <span className='discount-details'>Upto 30% Off</span>
                         <div className="card-description">
