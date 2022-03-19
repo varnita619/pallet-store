@@ -1,5 +1,4 @@
 import React from 'react';
-// import "../Login/Auth.css"
 import { Link } from 'react-router-dom';
 import "../Signup/Signup.css"
 
@@ -31,7 +30,7 @@ function Signup() {
                             type="checkbox"
                             checked="checked"
                             name="remember"
-                            style={{marginBottom: '15px'}}
+                            className='remember-me-checkbox'
                         />
                         Remember me
                     </label>

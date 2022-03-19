@@ -27,7 +27,7 @@ function Login() {
               type="checkbox"
               checked="checked"
               name="remember"
-              style={{marginBottom: '15px'}}
+              className='remember-me-checkbox'
             />
             Remember me
           </label>
