@@ -1,0 +1,34 @@
+.card{
+    margin: 1rem .2rem 2.5rem 4rem;
+}
+
+.card:hover{
+    box-shadow: .4rem .4rem .5rem .4rem var(--shadow-color);
+}
+
+.cart-btn{
+    padding: .3rem;
+    background: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    text-decoration: none;
+
+}
+.outOfStock-btn{
+    position: absolute;
+    background: transparent;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: .2rem;
+    margin: .2rem;
+}
+
+.cart-btn:hover{
+    background-color: var(--text-color);
+    color: var(--primary-color);
+}
+
+.card-image > img{
+    height: 20rem;
+}

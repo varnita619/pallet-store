@@ -20,7 +20,7 @@ function NavBar(){
           </div>
   
           <div className="nav-bar_section--align-end">
-            <Link to='/logout'><i className="fas fa-sign-out-alt icon"></i></Link>
+            <Link to='/login'><i className="fas fa-user icon"></i></Link>
   
             <Link to='/cart'><i className="fas fa-shopping-cart icon"></i></Link>
   

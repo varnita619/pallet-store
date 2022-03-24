@@ -4,9 +4,9 @@
     top: 0;
     left: 0;
     z-index: 999;
-    opacity: 2;
     background-color: var(--background-color);
-    box-shadow: 0rem 0rem 1rem .2rem var(--shadow-color);
+    box-shadow: .2rem .2rem .3rem .2rem var(--shadow-color);
+
 }
 .nav-links {
     text-decoration: none;

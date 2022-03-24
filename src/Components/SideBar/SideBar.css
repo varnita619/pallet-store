@@ -6,6 +6,7 @@
 
 .clear-btn{
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .slide-container{
