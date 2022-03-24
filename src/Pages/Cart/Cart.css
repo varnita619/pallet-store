@@ -19,6 +19,9 @@
 .card-pricing{
    display: flex;
 }
+.card-details{
+    margin-top: .1rem;
+}
 
 .price{
     color: var(--sub-heading);

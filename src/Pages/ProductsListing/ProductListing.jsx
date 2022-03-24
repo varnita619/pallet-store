@@ -15,7 +15,6 @@ function ProductListing() {
 
         <main className="products-wrapper">
           <h2 className="products-heading">All Products</h2>
-
           {filteredProducts.map((eachProduct, i) => {
             return <ProductCard eachProduct={eachProduct} key={i} />;
           })}
