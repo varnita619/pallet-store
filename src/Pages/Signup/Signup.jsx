@@ -3,9 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import "../Signup/Signup.css";
 import { useState } from "react";
 import axios from "axios";
-import { useAuthContext } from "../../Context/AuthContext";
-import { signupHandler } from "../../backend/controllers/AuthController";
-
 function Signup() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
