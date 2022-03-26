@@ -12,7 +12,6 @@ function ProductCard({eachProduct}) {
   const {state: {cart}, addToCart} = useCartContext();
   const addToCartHandler = (eachProduct)=>{
     addToCart(eachProduct);
-    console.log(eachProduct)
   }
   return (
     <>

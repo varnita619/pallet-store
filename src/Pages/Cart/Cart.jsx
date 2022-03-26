@@ -22,7 +22,6 @@ function Cart() {
 
   // get total price
   const getTotalPrice = cart.reduce(totalPrice, 0);
-  console.log(getTotalPrice,totalPrice)
 
   // get total MRP
   const getTotalMRP = cart.reduce(totalMRP, 0);
@@ -81,9 +80,9 @@ function Cart() {
                   <button className="dec-btn" onClick={() => decrementQuantity(eachProduct, "decrement")}>-</button>
                 </div>
                 <div className="horizontal-card-buttons">
-                  <button className="btn1">
+                  <button className="btn1" onClick={() => deleteCartItem(eachProduct)}>
                     {" "}
-                    <i className="fas fa-shopping-cart" onClick={() => deleteCartItem(eachProduct)}></i> Remove from cart
+                    <i className="fas fa-shopping-cart"></i> Remove from cart
                   </button>
                   <button className="btn2">
                     {" "}

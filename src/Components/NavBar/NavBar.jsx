@@ -42,7 +42,7 @@ function NavBar() {
 
           <div className="badge">
               {token && <i className="far fa-heart ico icon icons-badge"></i>}
-              {token && <span className=" badge-icon-number">3</span>}
+              {token && <span className=" badge-icon-number">0</span>}
           </div>
 
           <div
