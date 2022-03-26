@@ -5492,6 +5492,13 @@
     "call-bind" "^1.0.2"
     "get-intrinsic" "^1.1.1"
 
+"get-user-locale@^1.1.1":
+  "integrity" "sha512-gQo03lP1OArHLKlnoglqrGGl7b04u2EP9Xutmp72cMdtrrSD7ZgIsCsUKZynYWLDkVJW33Cj3pliP7uP0UonHQ=="
+  "resolved" "https://registry.npmjs.org/get-user-locale/-/get-user-locale-1.4.0.tgz"
+  "version" "1.4.0"
+  dependencies:
+    "lodash.once" "^4.1.1"
+
 "get-value@^2.0.3", "get-value@^2.0.6":
   "integrity" "sha1-3BXKHGcjh8p2vTesCjlbogQqLCg="
   "resolved" "https://registry.npmjs.org/get-value/-/get-value-2.0.6.tgz"
@@ -7477,6 +7484,11 @@
   "integrity" "sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ=="
   "resolved" "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
   "version" "4.6.2"
+
+"lodash.once@^4.1.1":
+  "integrity" "sha1-DdOXEhPHxW34gJd9UEyI+0cal6w="
+  "resolved" "https://registry.npmjs.org/lodash.once/-/lodash.once-4.1.1.tgz"
+  "version" "4.1.1"
 
 "lodash.pick@^4.4.0":
   "integrity" "sha1-UvBWEP/53tQiYRRB7R/BI6AwAbM="
@@ -9749,7 +9761,7 @@
     "strip-ansi" "6.0.0"
     "text-table" "0.2.0"
 
-"react-dom@^17.0.0 || ^16.3.0 || ^15.5.4", "react-dom@^17.0.2", "react-dom@>=16.8":
+"react-dom@^17.0.0 || ^16.3.0 || ^15.5.4", "react-dom@^17.0.2", "react-dom@>=16.8", "react-dom@>=16.8.0":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -9762,6 +9774,13 @@
   "integrity" "sha512-mKR90fX7Pm5seCOfz8q9F+66VCc1PGsWSBxKbITjfKVQHMNF2zudxHnMdJiB1fRCb+XsbQV9sO9DCkgsMQgBIA=="
   "resolved" "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.10.tgz"
   "version" "6.0.10"
+
+"react-intl-number-format@^1.1.1":
+  "integrity" "sha512-V2C1SuMeZWzK9XOaMpKpb1klJ0+RJF2QwkGKME4iC5mj0v1EG/jV6De+rxwZpA6GdyRzpF/EbUtz/PjXAUtvIw=="
+  "resolved" "https://registry.npmjs.org/react-intl-number-format/-/react-intl-number-format-1.1.1.tgz"
+  "version" "1.1.1"
+  dependencies:
+    "get-user-locale" "^1.1.1"
 
 "react-is@^16.13.1":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
@@ -9883,7 +9902,7 @@
     "use-composed-ref" "^1.0.0"
     "use-latest" "^1.0.0"
 
-"react@^15.0.2 || ^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@^17.0.0 || ^16.3.0 || ^15.5.4", "react@^17.0.2", "react@>= 16", "react@>=16.8", "react@17.0.2":
+"react@^15.0.2 || ^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@^17.0.0 || ^16.3.0 || ^15.5.4", "react@^17.0.2", "react@>= 16", "react@>=16.8", "react@>=16.8.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
