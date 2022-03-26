@@ -38,12 +38,12 @@ function Signup() {
 
   return (
     <>
-      <form onSubmit={(e) => signUpFormHandler(e)}>
+      <form>
         <div className="auth-container">
           <div className="signup-container">
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
-            {/* <hr /> */}
+            <hr />
 
             <label>
               <b>First Name</b>
@@ -134,7 +134,7 @@ function Signup() {
               <button
                 type="submit"
                 className="signupbtn anchor-btn"
-                // onClick={(e) => signUpFormHandler(e)}
+                onClick={(e) => signUpFormHandler(e)}
               >
                 Sign Up
               </button>
