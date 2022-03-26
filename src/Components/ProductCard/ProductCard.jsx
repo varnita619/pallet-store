@@ -8,11 +8,9 @@ function ProductCard({
     <>
       <div key={_id}>
         <div className="card">
-          <Link to="/wishlist">
             <span className="card-badge">
               <i className="far fa-heart"></i>
             </span>
-          </Link>
       
           { !inStock && <button className="outOfStock-btn">Out Of Stock</button>}
           <div className="card-image">

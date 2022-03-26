@@ -1,5 +1,6 @@
 .card{
     margin: 1rem .2rem 2.5rem 4rem;
+    cursor: pointer;
 }
 
 .card:hover{
@@ -32,3 +33,4 @@
 .card-image > img{
     height: 20rem;
 }
+
