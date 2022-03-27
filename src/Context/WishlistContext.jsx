@@ -32,12 +32,12 @@ const WishlistContextProvider = ({ children }) => {
             }
           );
 
-          //   if (status === 201) {
+            if (status === 201) {
           dispatch({
             type: "ADD_TO_WISHLIST",
             payload: wishlist,
           });
-          //   }
+            }
         } catch (error) {
           console.log(error);
         }
@@ -57,12 +57,12 @@ const WishlistContextProvider = ({ children }) => {
           },
         });
 
-        // if (status === 200) {
+        if (status === 200) {
         dispatch({
           type: "REMOVE_FROM_WISHLIST",
           payload: wishlist,
         });
-        // }
+        }
       } catch (error) {
         console.log(error);
       }

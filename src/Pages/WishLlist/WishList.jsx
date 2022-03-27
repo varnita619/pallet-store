@@ -5,8 +5,6 @@ import { useWishlistContext } from "../../Context/WishlistContext";
 import { priceFormatter } from "../../Utils/priceFormatter";
 
 function WishList() {
-  // const { _id, name, company, imageURL, rating, price, category, inStock } =
-  //   eachProduct;
 
   const { addToCart } = useCartContext();
 
