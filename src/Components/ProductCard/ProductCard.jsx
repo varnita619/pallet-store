@@ -1,9 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../Context/AuthContext";
+import { useCartContext } from "../../Context/CartContext";
+import { priceFormatter } from "../../Utils/priceFormatter";
 import "../ProductCard/ProductCard.css";
 
-function ProductCard({
-  eachProduct: { _id, name, company, imageURL, rating, price, category, inStock },
-}) {
+function ProductCard({eachProduct}) {
+  const  { _id, name, company, imageURL, rating, price, category, inStock } = eachProduct;
+
+  const {token} = useAuthContext();
+  const navigate = useNavigate();
+  const {state: {cart}, addToCart} = useCartContext();
+  const addToCartHandler = (eachProduct)=>{
+    addToCart(eachProduct);
+  }
   return (
     <>
       <div key={_id}>
@@ -25,13 +34,19 @@ function ProductCard({
             
           </div>
           <div className="card-pricing">
-            <h4>&#8377;{price}</h4>
+            <h4>&#8377;{priceFormatter(price)}</h4>
+            <span className="price">
+                    <strike>&#8377; {priceFormatter(2200)}</strike>
+                  </span>
           </div>
 
           <div className="card-buttons">
-            <Link to="/cart" className="btn1 cart-btn">
+            {cart.find((eachItem) => eachItem._id === eachProduct._id ) ?
+            <button className="btn1 cart-btn" onClick={() => navigate('/cart')}>
+              <i className="fas fa-shopping-cart"></i> Go to cart
+            </button> :<button className="btn1 cart-btn" onClick={() => addToCartHandler(eachProduct)}>
               <i className="fas fa-shopping-cart"></i> Add to cart
-            </Link>
+            </button>}
           </div>
         </div>
       </div>

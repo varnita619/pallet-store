@@ -11,7 +11,7 @@ export const products = [
     name: "Solid Men Mandarin Collar White, Blue T-Shirt",
     company: "FastColors",
     category:'Kids',
-    price: "294",
+    price: "294", 
     rating: "3",
     inStock: true,
     imageURL: "https://images.unsplash.com/photo-1613852348851-df1739db8201?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWFuJTIwdCUyMHNoaXJ0fGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=500&q=60",

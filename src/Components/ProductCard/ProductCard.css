@@ -7,6 +7,10 @@
     box-shadow: .4rem .4rem .5rem .4rem var(--shadow-color);
 }
 
+.price{
+    margin-top: .1rem;
+}
+
 .cart-btn{
     padding: .3rem;
     background: var(--primary-color);
