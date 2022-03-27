@@ -2,6 +2,7 @@ import React from "react";
 import "./Cart.css";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
+import { useWishlistContext } from "../../Context/WishlistContext";
 import {
   productQuantity,
   totalPrice,
@@ -16,6 +17,11 @@ function Cart() {
     decrementQuantity,
     deleteCartItem,
   } = useCartContext();
+
+  const {
+    state: { wishlist },
+    addToWishlist
+  } = useWishlistContext();
 
   //get total Product quantity
   const getTotalQuantity = cart.reduce(productQuantity, 0);
@@ -94,7 +100,7 @@ function Cart() {
                     {" "}
                     <i className="fas fa-shopping-cart"></i> Remove from cart
                   </button>
-                  <button className="btn2">
+                  <button className="btn2" onClick={() => {addToWishlist(eachProduct), deleteCartItem(eachProduct)}}>
                     {" "}
                     <i className="fa fa-heart" aria-hidden="true"></i> Move to
                     Wishlist

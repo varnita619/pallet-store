@@ -22,8 +22,15 @@ function WishList() {
 
           {wishlist?.map((eachProduct) => (
             <div className="card" key={eachProduct._id}>
-              <span className="card-badge">
-                <i className="fas fa-heart heart-icon"></i>
+              <span className="card-badge trash-icon">
+                <button
+                  onClick={() => {
+                    removeFromWishlist(eachProduct);
+                  }}
+                  className="like-btn"
+                >
+                 <i className="far fa-trash-alt"></i>
+                </button>
               </span>
               <div className="card-image">
                 <img src={eachProduct.imageURL} alt="card-image" />
@@ -42,7 +49,12 @@ function WishList() {
               <h6 className="discount">&#8377; 50% ff</h6>
 
               <div className="card-buttons">
-                <button className="btn1 cart-btn">
+                <button
+                  className="btn1 cart-btn"
+                  onClick={() => {
+                    addToCart(eachProduct), removeFromWishlist(eachProduct);
+                  }}
+                >
                   <i className="fas fa-shopping-cart"></i> Add to cart
                 </button>
               </div>

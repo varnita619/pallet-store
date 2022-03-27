@@ -7,3 +7,8 @@
     color: var(--danger-color);
 }
 
+.trash-icon{
+    background: none;
+    box-shadow: none;
+}
+
