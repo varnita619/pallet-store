@@ -13,29 +13,7 @@ const initialState = {
 const CartContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
   const { cart } = state;
-  const { token, user } = useAuthContext();
-
-  // get all items of the cart from the db
-  useEffect(() => {
-    {
-      token &&
-        (async () => {
-          try {
-            const {
-              data: { cart },
-            } = await axios("api/user/cart", {
-              headers: {
-                authorization: token,
-              },
-            });
-
-            dispatch({ type: "GET_ALL_ITEM_OF_CART", payload: cart });
-          } catch (error) {
-            console.log(error);
-          }
-        })();
-    }
-  }, [token, user]);
+  const { token } = useAuthContext();
 
   //adds a new item to the cart of the user in the db
   const addToCart = (product) => {
@@ -151,7 +129,16 @@ const CartContextProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ state, dispatch, addToCart, incrementQuantity, decrementQuantity, deleteCartItem }}>
+    <CartContext.Provider
+      value={{
+        state,
+        dispatch,
+        addToCart,
+        incrementQuantity,
+        decrementQuantity,
+        deleteCartItem,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
