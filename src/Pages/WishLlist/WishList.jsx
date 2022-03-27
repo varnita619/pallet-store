@@ -1,124 +1,57 @@
-import React from 'react';
+import React from "react";
 import "./WishList.css";
-import { Link } from 'react-router-dom';
+import { useCartContext } from "../../Context/CartContext";
+import { useWishlistContext } from "../../Context/WishlistContext";
+import { priceFormatter } from "../../Utils/priceFormatter";
 
- function WishList(){
-    return(
-        <>
-         <div className="main-container">
-      {/* <!-- Wishlist Section Start --> */}
+function WishList() {
+  // const { _id, name, company, imageURL, rating, price, category, inStock } =
+  //   eachProduct;
 
-      <main className="products-wrapper">
-        <h1 className="heading">My Wishlist</h1>
+  const { addToCart } = useCartContext();
 
-        <div className="card">
-          <span className="card-badge"
-            ><i className="fas fa-heart heart-icon"></i
-          ></span>
-          <div className="card-image">
-            <img
-              src="https://cdn.pixabay.com/photo/2017/03/27/13/28/man-2178721__340.jpg"
-              alt="card-image"
-            />
-          </div>
+  const {
+    state: { wishlist },
+    removeFromWishlist,
+  } = useWishlistContext();
+  return (
+    <>
+      <div className="main-container">
+        <main className="products-wrapper">
+          <h1 className="heading">My Wishlist</h1>
 
-          <div className="card-details">
-            <h3>Men's Premium Jacket</h3>
-            <span>Ships in 3-4 working days</span>
-          </div>
-          <div className="card-pricing">
-            <h2>$20</h2>
-          </div>
+          {wishlist?.map((eachProduct) => (
+            <div className="card" key={eachProduct._id}>
+              <span className="card-badge">
+                <i className="fas fa-heart heart-icon"></i>
+              </span>
+              <div className="card-image">
+                <img src={eachProduct.imageURL} alt="card-image" />
+              </div>
 
-          <div className="card-buttons">
-            <button className="btn1 cart-btn">
-              <i className="fas fa-shopping-cart"></i> Add to cart
-            </button>
-          </div>
-        </div>
+              <div className="card-details">
+                <h3>{eachProduct.title}</h3>
+                <span>Ships in 3-4 working days</span>
+              </div>
+              <div className="card-pricing">
+                <h2>&#8377;{eachProduct.price}</h2>
+                <span className="price">
+                  <strike>&#8377; 2200</strike>
+                </span>
+              </div>
+              <h6 className="discount">&#8377; 50% ff</h6>
 
-        <div className="card">
-          <span className="card-badge"
-            ><i className="fas fa-heart heart-icon"></i
-          ></span>
-          <div className="card-image">
-            <img
-              src="https://cdn.pixabay.com/photo/2017/03/27/13/28/man-2178721__340.jpg"
-              alt="card-image"
-            />
-          </div>
-
-          <div className="card-details">
-            <h3>Men's Premium Jacket</h3>
-            <span>Ships in 3-4 working days</span>
-          </div>
-          <div className="card-pricing">
-            <h2>$20</h2>
-          </div>
-
-          <div className="card-buttons">
-            <button className="btn1 cart-btn">
-              <i className="fas fa-shopping-cart"></i> Add to cart
-            </button>
-          </div>
-        </div>
-
-        <div className="card">
-          <span className="card-badge"
-            ><i className="fas fa-heart heart-icon"></i
-          ></span>
-          <div className="card-image">
-            <img
-              src="https://cdn.pixabay.com/photo/2017/03/27/13/28/man-2178721__340.jpg"
-              alt="card-image"
-            />
-          </div>
-
-          <div className="card-details">
-            <h3>Men's Premium Jacket</h3>
-            <span>Ships in 3-4 working days</span>
-          </div>
-          <div className="card-pricing">
-            <h2>$20</h2>
-          </div>
-
-          <div className="card-buttons">
-            <button className="btn1 cart-btn">
-              <i className="fas fa-shopping-cart"></i> Add to cart
-            </button>
-          </div>
-        </div>
-
-        <div className="card">
-          <span className="card-badge"
-            ><i className="fas fa-heart heart-icon"></i
-          ></span>
-          <div className="card-image">
-            <img
-              src="https://cdn.pixabay.com/photo/2017/03/27/13/28/man-2178721__340.jpg"
-              alt="card-image"
-            />
-          </div>
-
-          <div className="card-details">
-            <h3>Men's Premium Jacket</h3>
-            <span>Ships in 3-4 working days</span>
-          </div>
-          <div className="card-pricing">
-            <h2>$20</h2>
-          </div>
-
-          <div className="card-buttons">
-            <button className="btn1 cart-btn">
-              <i className="fas fa-shopping-cart"></i> Add to cart
-            </button>
-          </div>
-        </div>
-      </main>
-    </div>
-
-        </>
-    )
+              <div className="card-buttons">
+                <button className="btn1 cart-btn">
+                  <i className="fas fa-shopping-cart"></i> Add to cart
+                </button>
+              </div>
+            </div>
+          ))}
+        </main>
+      </div>
+    </>
+  );
 }
 
-export {WishList};
+export { WishList };

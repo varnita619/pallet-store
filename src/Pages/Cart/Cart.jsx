@@ -7,7 +7,7 @@ import {
   totalPrice,
   totalMRP,
 } from "../../Utils/priceCalculations";
-import {priceFormatter} from "../../Utils/priceFormatter";
+import { priceFormatter } from "../../Utils/priceFormatter";
 
 function Cart() {
   const {
@@ -56,10 +56,7 @@ function Cart() {
           {cart?.map((eachProduct) => (
             <div className="horizontal-card" key={eachProduct._id}>
               <div className="horizontal-card-image">
-                <img
-                  src={eachProduct.imageURL}
-                  alt="card-image"
-                />
+                <img src={eachProduct.imageURL} alt="card-image" />
               </div>
               <div className="card-content">
                 <div className="card-details">
@@ -75,12 +72,25 @@ function Cart() {
                 <h6 className="discount">&#8377; 50% ff</h6>
 
                 <div className="qty-btn">
-                  <button className="inc-btn" onClick={()=> incrementQuantity(eachProduct, "increment")}>+</button>
+                  <button
+                    className="inc-btn"
+                    onClick={() => incrementQuantity(eachProduct, "increment")}
+                  >
+                    +
+                  </button>
                   <span className="qty-text">{getTotalQuantity}</span>
-                  <button className="dec-btn" onClick={() => decrementQuantity(eachProduct, "decrement")}>-</button>
+                  <button
+                    className="dec-btn"
+                    onClick={() => decrementQuantity(eachProduct, "decrement")}
+                  >
+                    -
+                  </button>
                 </div>
                 <div className="horizontal-card-buttons">
-                  <button className="btn1" onClick={() => deleteCartItem(eachProduct)}>
+                  <button
+                    className="btn1"
+                    onClick={() => deleteCartItem(eachProduct)}
+                  >
                     {" "}
                     <i className="fas fa-shopping-cart"></i> Remove from cart
                   </button>

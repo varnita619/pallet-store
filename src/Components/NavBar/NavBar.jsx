@@ -4,10 +4,16 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../../logo.png";
 import { useAuthContext } from "../../Context/AuthContext";
 import { useCartContext } from "../../Context/CartContext";
+import { useWishlistContext } from "../../Context/WishlistContext";
 
 function NavBar() {
   const { token, userLogout } = useAuthContext();
-  const {state: {cart} } = useCartContext();
+  const {
+    state: { cart },
+  } = useCartContext();
+  const {
+    state: { wishlist },
+  } = useWishlistContext();
   const navigate = useNavigate();
   return (
     <div className="nav-bar">
@@ -35,14 +41,16 @@ function NavBar() {
             <i className="fas fa-user icon"></i>
           </Link>
 
-          <div className="badge" onClick={()=> navigate('/cart')}>
-              {token && <i className="fas fa-shopping-cart icon icons-badge"></i>}
-              {token && <span className=" badge-icon-number">{cart?.length}</span>}
+          <div className="badge" onClick={() => navigate("/cart")}>
+            {token && <i className="fas fa-shopping-cart icon icons-badge"></i>}
+            {token && (
+              <span className=" badge-icon-number">{cart?.length}</span>
+            )}
           </div>
 
-          <div className="badge">
-              {token && <i className="far fa-heart ico icon icons-badge"></i>}
-              {token && <span className=" badge-icon-number">0</span>}
+          <div className="badge" onClick={() => navigate('/wishlist')}>
+            {token && <i className="far fa-heart ico icon icons-badge"></i>}
+            {token && <span className=" badge-icon-number">{wishlist?.length}</span>}
           </div>
 
           <div

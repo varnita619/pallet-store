@@ -1,40 +1,44 @@
-.card{
-    margin: 1rem .2rem 2.5rem 4rem;
-    cursor: pointer;
+.card {
+  margin: 1rem 0.2rem 2.5rem 4rem;
+  cursor: pointer;
 }
 
-.card:hover{
-    box-shadow: .4rem .4rem .5rem .4rem var(--shadow-color);
+.card:hover {
+  box-shadow: 0.4rem 0.4rem 0.5rem 0.4rem var(--shadow-color);
 }
 
-.price{
-    margin-top: .1rem;
+.price {
+  margin-top: 0.1rem;
 }
 
-.cart-btn{
-    padding: .3rem;
-    background: var(--primary-color);
-    color: var(--text-color);
-    text-align: center;
-    text-decoration: none;
-
+.cart-btn {
+  padding: 0.3rem;
+  background: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+  text-decoration: none;
 }
-.outOfStock-btn{
-    position: absolute;
-    background: transparent;
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    border: none;
-    padding: .2rem;
-    margin: .2rem;
-}
-
-.cart-btn:hover{
-    background-color: var(--text-color);
-    color: var(--primary-color);
+.outOfStock-btn {
+  position: absolute;
+  background: transparent;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.2rem;
+  margin: 0.2rem;
 }
 
-.card-image > img{
-    height: 20rem;
+.cart-btn:hover {
+  background-color: var(--text-color);
+  color: var(--primary-color);
 }
 
+.card-image > img {
+  height: 20rem;
+}
+
+.like-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+}
