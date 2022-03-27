@@ -41,16 +41,20 @@ function NavBar() {
             <i className="fas fa-user icon"></i>
           </Link>
 
-          <div className="badge" onClick={() => navigate("/cart")}>
+          <div className="badge">
+            <Link to='/cart'>
             {token && <i className="fas fa-shopping-cart icon icons-badge"></i>}
             {token && (
               <span className=" badge-icon-number">{cart?.length}</span>
             )}
+            </Link>
           </div>
 
-          <div className="badge" onClick={() => navigate('/wishlist')}>
+          <div className="badge">
+            <Link to='/wishlist'>
             {token && <i className="far fa-heart ico icon icons-badge"></i>}
             {token && <span className=" badge-icon-number">{wishlist?.length}</span>}
+            </Link>
           </div>
 
           <div
