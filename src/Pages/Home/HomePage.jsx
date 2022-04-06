@@ -1,17 +1,19 @@
 import React from 'react';
 import "./HomePage.css";
 import { Link } from 'react-router-dom';
+import {TopBar} from "../../Components";
 
 
 function Home() {
     return (
         <div>
+            <TopBar />
             <div className="banner">
                 <img src="https://res.cloudinary.com/dqgqdj4jf/image/upload/v1647587862/banner/home_xci4gu.gif"
                     alt="banner" />
                 <div className="btn-container">
 
-                    <Link to='/productlisting'><button className="twin-btn">Shop Now</button></Link>
+                    <Link to='/productlisting'><button className="shop-now-btn">Shop Now</button></Link>
                 </div>
             </div>
 

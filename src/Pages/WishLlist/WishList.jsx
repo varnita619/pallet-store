@@ -2,7 +2,7 @@ import React from "react";
 import "./WishList.css";
 import { useCartContext } from "../../Context/CartContext";
 import { useWishlistContext } from "../../Context/WishlistContext";
-import { priceFormatter } from "../../Utils/priceFormatter";
+import {TopBar} from "../../Components";
 
 function WishList() {
 
@@ -14,6 +14,7 @@ function WishList() {
   } = useWishlistContext();
   return (
     <>
+    <TopBar />
       <div className="main-container">
         <main className="products-wrapper">
           <h1 className="heading">My Wishlist</h1>

@@ -6,6 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useAuthContext } from "../../Context/AuthContext";
 import { emailChecker } from "../../Utils/emailChecker";
+import {TopBar} from "../../Components";
 
 function Login() {
   const navigate = useNavigate();
@@ -42,6 +43,7 @@ function Login() {
   };
   return (
     <>
+    <TopBar />
       <form>
         <div className="auth-container">
           <div className="signup-container">

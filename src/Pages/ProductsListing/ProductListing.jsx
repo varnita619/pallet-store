@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react";
 import "../ProductsListing/ProductListing.css";
 import "../../CSS/Reset.css";
-import { SideBar } from "../../Components/SideBar/SideBar";
-import { ProductCard } from "../../Components/ProductCard/ProductCard";
+import { SideBar, ProductCard, NavBar } from "../../Components";
 import { useProductsContext } from "../../Context/ProductsContext";
 
 function ProductListing() {
@@ -10,6 +8,7 @@ function ProductListing() {
 
   return (
     <div>
+      <NavBar />
       <div className="main-container">
         <SideBar />
 

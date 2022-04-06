@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "../Signup/Signup.css";
 import { useState } from "react";
 import axios from "axios";
+import {TopBar} from "../../Components";
+
 function Signup() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -35,6 +37,7 @@ function Signup() {
 
   return (
     <>
+    <TopBar />
       <form>
         <div className="auth-container">
           <div className="signup-container">
