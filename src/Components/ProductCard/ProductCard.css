@@ -1,5 +1,5 @@
 .card {
-  margin: 1rem 0.2rem 2.5rem 4rem;
+  margin: 1rem 0;
   cursor: pointer;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .card-image > img {
-  height: 20rem;
+  height: 17rem;
 }
 
 .like-btn {
