@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { productsReducerFunction } from "../Reducer/ProductsReducer.js";
 import axios from "axios";
 import { filterByPriceRange } from "../Utils/filterByPriceRange.js";
@@ -20,6 +20,9 @@ const initialState = {
 const ProductsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productsReducerFunction, initialState);
   const { products, priceRange, sortBy, category, rating } = state;
+
+  // for toggling sidebar
+  const [active, setActive] = useState(false);
 
   // Get unique Category Name
   const getUniqueCategory = uniqueCategory(products, "category");
@@ -56,7 +59,14 @@ const ProductsContextProvider = ({ children }) => {
 
   return (
     <ProductsContext.Provider
-      value={{ state, dispatch, filteredProducts, getUniqueCategory }}
+      value={{
+        state,
+        dispatch,
+        filteredProducts,
+        getUniqueCategory,
+        active,
+        setActive,
+      }}
     >
       {children}
     </ProductsContext.Provider>

@@ -3,11 +3,11 @@ import "../../CSS/Reset.css";
 import { useProductsContext } from "../../Context/ProductsContext";
 
 function SideBar() {
-  const { state, dispatch, getUniqueCategory } = useProductsContext();
+  const { state, dispatch, getUniqueCategory, active } = useProductsContext();
   const { priceRange, sortBy, category, rating } = state;
   return (
     <>
-      <div className="side-bar">
+      <div className={active ? "side-bar-active" : "side-bar"}>
         <div className="side-list">
           <div className="sort-filters">
             <h3>Filters</h3>

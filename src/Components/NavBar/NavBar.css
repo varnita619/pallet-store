@@ -59,3 +59,12 @@
 .logo{
     height: 3.2rem;
 }
+
+@media screen and (max-width: 967px) {
+    .nav-bar_action-item{
+      display: block;
+    }
+    .search{
+      display: none;
+    }
+  }
