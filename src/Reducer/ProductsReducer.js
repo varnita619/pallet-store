@@ -44,7 +44,7 @@ export const productsReducerFunction = (state, action) => {
                 ...state,
                 sortBy: null,
                 rating: 0,
-                priceRange: 3000,
+                priceRange: 6000,
                 category: [],
             };
         default:

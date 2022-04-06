@@ -1,76 +1,86 @@
-.sort-filters{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
+.sort-filters {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
 }
 
-.clear-btn{
-    text-decoration: underline;
-    cursor: pointer;
+.clear-btn {
+  text-decoration: underline;
+  cursor: pointer;
+  margin-right: 1rem;
 }
 
-.slide-container{
-    margin-left: 1rem;
-    width: 100%;
+.slide-container {
+  margin-left: 1rem;
+  width: 100%;
 }
 
-.side-bar{
-    flex: 0 0 240px;
-    width:100%;
-    height: 100vh;
-    margin-left: 2rem;
-    position: sticky;
-    top: 5.5rem;
-    bottom: 0;
+.side-bar {
+  flex: 0 0 240px;
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 5.5rem;
+  bottom: 0;
+  box-shadow: .2rem .2rem .2rem .3rem var(--shadow-color);
 }
 
-.list-topic{
-    padding: 1rem;
-    border-bottom: 1px solid var(--secondary-color);
-    margin-bottom: .5rem;
-    margin-top: 1rem;
+.list-topic {
+  padding: 1rem;
+  border-bottom: 1px solid var(--secondary-color);
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 
-.side-list-subtopic li{
-    list-style: none;
-    text-align: justify;
-    padding: 1rem;
+.side-list-subtopic li {
+  list-style: none;
+  text-align: justify;
+  padding: 1rem;
 }
 
-.side-list-subtopic a{
-    text-decoration: none;
-    color: var(--text-black);
-    font-size: 1rem;
-    
+.side-list-subtopic a {
+  text-decoration: none;
+  color: var(--text-black);
+  font-size: 1rem;
 }
 
-.side-list-subtopic li a:hover{
-    color: var(--primary-color);
-   
+.side-list-subtopic li a:hover {
+  color: var(--primary-color);
 }
 
-.content-title{
-    margin-top: 2rem;
-    font-weight: bold;
-    font-size: 2rem;
-    text-align: center;
-    margin-left: 3rem;
+.content-title {
+  margin-top: 2rem;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  margin-left: 3rem;
 }
 
 /* media queries */
 
-@media screen and (max-width:967px){
-    .side-bar{
-        display: none;
-    }
+@media screen and (max-width: 967px) {
+  .side-bar {
+    display: none;
+  }
 
-    .component-content-container{
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    .component{
-        padding: 0;
-        margin: 0;
-    }
+  .side-bar-active {
+    flex: 0 0 240px;
+    width: 100%;
+    height: 100vh;
+    box-shadow: .2rem .2rem .2rem .3rem var(--shadow-color);
+    position: sticky;
+    top: 3rem;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .component-content-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .component {
+    padding: 0;
+    margin: 0;
+  }
 }

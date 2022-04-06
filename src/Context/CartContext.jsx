@@ -1,8 +1,8 @@
 import { createContext, useContext, useReducer } from "react";
-import { useEffect } from "react";
 import { useAuthContext } from "./AuthContext";
 import { cartReducer } from "../Reducer/CartReducer";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 const CartContext = createContext();
 
@@ -40,9 +40,10 @@ const CartContextProvider = ({ children }) => {
               payload: cart,
               productId: product._id,
             });
+            toast.success('Product added to cart', {position: 'bottom-left'})
           }
         } catch (error) {
-          console.log(error);
+          toast.error(" You need to login to add product to cart!", { position: "bottom-left" });
         }
       })();
     }
@@ -74,7 +75,7 @@ const CartContextProvider = ({ children }) => {
 
         dispatch({ type: "DECREMENT_QUANTITY", payload: cart });
       } catch (error) {
-        console.log(error);
+        toast.error("Error occured in decrementing the quantity!", { position: "bottom-left" });
       }
     }
   };
@@ -102,7 +103,7 @@ const CartContextProvider = ({ children }) => {
 
       dispatch({ type: "INCREMENT_QUANTITY", payload: cart });
     } catch (error) {
-      console.log(error);
+      toast.error("Error occured in incrementing the quantity!", { position: "bottom-left" });
     }
   };
 
@@ -122,9 +123,10 @@ const CartContextProvider = ({ children }) => {
 
       if (status === 200) {
         dispatch({ type: "DELETE_PRODUCT", payload: cart });
+        toast.success('Product Removed from cart', {position: 'bottom-left'})
       }
     } catch (error) {
-      console.log(error);
+      toast.error("Error occured in removing! Try again later", { position: "bottom-left" });
     }
   };
 

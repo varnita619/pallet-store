@@ -1,22 +1,14 @@
-import { Home } from "./Pages/Home/HomePage";
 import { Route, Routes } from "react-router-dom";
-import { Footer } from "./Components/Footer/Footer";
-import { Cart } from "./Pages/Cart/Cart";
-import { WishList } from "./Pages/WishLlist/WishList";
-import { ProductListing } from "./Pages/ProductsListing/ProductListing";
-import { NavBar } from "./Components/NavBar/NavBar";
+import { Footer } from "./Components";
+import { Home, Cart, WishList, ProductListing, Login, Logout, Signup } from "./Pages";
 import MockMan from "./MockMan/MockMan";
-import {Login} from "./Pages/Login/Login";
-import {Logout} from "./Pages/Logout/Logout";
-import {Signup} from "./Pages/Signup/Signup";
-import "./CSS/Reset.css"
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <div className="App">
-
+      <Toaster />
       <div>
-        <NavBar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/productlisting" element={<ProductListing />}></Route>

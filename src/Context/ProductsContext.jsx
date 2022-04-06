@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import { productsReducerFunction } from "../Reducer/ProductsReducer.js";
 import axios from "axios";
 import { filterByPriceRange } from "../Utils/filterByPriceRange.js";
@@ -6,13 +12,14 @@ import { sortByPrice } from "../Utils/sortByPrice.js";
 import { filterByCategory } from "../Utils/filterByCategory.js";
 import { filterByRating } from "../Utils/filterByRating.js";
 import { uniqueCategory } from "../Utils/uniqueCategory.js";
+import { toast } from "react-hot-toast";
 
 const ProductsContext = createContext();
 
 const initialState = {
   sortBy: null,
   rating: 0,
-  priceRange: 3000,
+  priceRange: 6000,
   products: [],
   category: [],
 };
@@ -20,6 +27,9 @@ const initialState = {
 const ProductsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productsReducerFunction, initialState);
   const { products, priceRange, sortBy, category, rating } = state;
+
+  // for toggling sidebar
+  const [active, setActive] = useState(false);
 
   // Get unique Category Name
   const getUniqueCategory = uniqueCategory(products, "category");
@@ -49,14 +59,21 @@ const ProductsContextProvider = ({ children }) => {
           payload: products,
         });
       } catch (error) {
-        console.log(error);
+        toast.error("Error occured in fetching products! Try again later", { position: "bottom-left" });
       }
     })();
   }, []);
 
   return (
     <ProductsContext.Provider
-      value={{ state, dispatch, filteredProducts, getUniqueCategory }}
+      value={{
+        state,
+        dispatch,
+        filteredProducts,
+        getUniqueCategory,
+        active,
+        setActive,
+      }}
     >
       {children}
     </ProductsContext.Provider>

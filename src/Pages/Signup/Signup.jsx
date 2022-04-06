@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import "../Signup/Signup.css";
 import { useState } from "react";
 import axios from "axios";
+import {TopBar} from "../../Components";
+import {toast} from "react-hot-toast";
+
 function Signup() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -25,16 +28,19 @@ function Signup() {
           setFormData({ firstName: "", lastName: "", email: "", password: "" });
           if (encodedToken) {
             navigate("/login");
+            toast.success(`Welcome ${formData.firstName}`, { position: "bottom-left" });
+            
           }
         }
       } catch (error) {
-        console.log(error);
+        toast.error("Email already exist!", { position: "bottom-left" });
       }
     })();
   };
 
   return (
     <>
+    <TopBar />
       <form>
         <div className="auth-container">
           <div className="signup-container">

@@ -1,6 +1,5 @@
 import React from "react";
 import "./Cart.css";
-import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
 import { useWishlistContext } from "../../Context/WishlistContext";
 import {
@@ -9,6 +8,7 @@ import {
   totalMRP,
 } from "../../Utils/priceCalculations";
 import { priceFormatter } from "../../Utils/priceFormatter";
+import {TopBar} from "../../Components";
 
 function Cart() {
   const {
@@ -20,7 +20,7 @@ function Cart() {
 
   const {
     state: { wishlist },
-    addToWishlist
+    addToWishlist,
   } = useWishlistContext();
 
   //get total Product quantity
@@ -55,6 +55,7 @@ function Cart() {
 
   return (
     <div>
+      <TopBar />
       <div className="main-container">
         <main className="cart-wrapper">
           <h4 className="heading">My Cart</h4>
@@ -100,7 +101,12 @@ function Cart() {
                     {" "}
                     <i className="fas fa-shopping-cart"></i> Remove from cart
                   </button>
-                  <button className="btn2" onClick={() => {addToWishlist(eachProduct), deleteCartItem(eachProduct)}}>
+                  <button
+                    className="btn2"
+                    onClick={() => {
+                      addToWishlist(eachProduct), deleteCartItem(eachProduct);
+                    }}
+                  >
                     {" "}
                     <i className="fa fa-heart" aria-hidden="true"></i> Move to
                     Wishlist

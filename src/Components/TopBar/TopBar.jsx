@@ -5,9 +5,8 @@ import logo from "../../logo.png";
 import { useAuthContext } from "../../Context/AuthContext";
 import { useCartContext } from "../../Context/CartContext";
 import { useWishlistContext } from "../../Context/WishlistContext";
-import { useProductsContext } from "../../Context/ProductsContext";
 
-function NavBar() {
+function TopBar() {
   const { token, userLogout } = useAuthContext();
   const {
     state: { cart },
@@ -16,18 +15,17 @@ function NavBar() {
     state: { wishlist },
   } = useWishlistContext();
   const navigate = useNavigate();
-  const { active, setActive } = useProductsContext();
 
   return (
     <div className="nav-bar">
       <div className="nav-bar_row">
         <div className="nav-bar_section--align-start">
-          <button
+          {/* <button
             className="nav-bar_action-item"
             onClick={() => setActive(!active)}
           >
             <i className="fas fa-bars"></i>
-          </button>
+          </button> */}
           <div className="logo-container">
             <img src={logo} alt="logo" className="logo" />
           </div>
@@ -80,4 +78,4 @@ function NavBar() {
   );
 }
 
-export { NavBar };
+export { TopBar };
