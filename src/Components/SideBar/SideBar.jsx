@@ -25,8 +25,9 @@ function SideBar() {
           <div className="slide-container">
             <input
               type="range"
-              min="194"
-              max="30000"
+              min="699"
+              max="6000"
+              value={priceRange}
               onChange={(e) =>
                 dispatch({
                   type: "FILTER_BY_PRICE_RANGE",

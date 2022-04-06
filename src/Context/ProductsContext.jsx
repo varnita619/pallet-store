@@ -12,7 +12,7 @@ const ProductsContext = createContext();
 const initialState = {
   sortBy: null,
   rating: 0,
-  priceRange: 3000,
+  priceRange: 6000,
   products: [],
   category: [],
 };
@@ -40,6 +40,7 @@ const ProductsContextProvider = ({ children }) => {
   const getFilterByRating = filterByRating(getFilterByCategory, rating);
 
   const filteredProducts = getFilterByRating;
+  console.log(filteredProducts);
 
   useEffect(() => {
     (async () => {

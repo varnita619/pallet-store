@@ -50,7 +50,7 @@ function ProductCard({ eachProduct }) {
             )}
           </span>
 
-          {!inStock && <button className="outOfStock-btn">Out Of Stock</button>}
+          {/* {!inStock && <button className="outOfStock-btn">Out Of Stock</button>} */}
           <div className="card-image">
             <img src={imageURL} alt="card-image" />
           </div>
@@ -64,7 +64,7 @@ function ProductCard({ eachProduct }) {
           <div className="card-pricing">
             <h4>&#8377;{priceFormatter(price)}</h4>
             <span className="price">
-              <strike>&#8377; {priceFormatter(2200)}</strike>
+              <strike>&#8377; {priceFormatter(6200)}</strike>
             </span>
           </div>
 
