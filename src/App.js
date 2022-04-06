@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import { Footer } from "./Components";
 import { Home, Cart, WishList, ProductListing, Login, Logout, Signup } from "./Pages";
 import MockMan from "./MockMan/MockMan";
-import "./CSS/Reset.css";
 import { Toaster } from "react-hot-toast";
 
 function App() {
