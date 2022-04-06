@@ -7,6 +7,7 @@ import axios from "axios";
 import { useAuthContext } from "../../Context/AuthContext";
 import { emailChecker } from "../../Utils/emailChecker";
 import {TopBar} from "../../Components";
+import {toast} from "react-hot-toast";
 
 function Login() {
   const navigate = useNavigate();
@@ -31,14 +32,15 @@ function Login() {
 
             if (encodedToken) {
               navigate("/productlisting");
+              toast.success(`Logged in Successfully`, { position: "bottom-left" });
             }
           }
         } catch (error) {
-          console.log(error);
+          toast.error("Error occured in logging in!", { position: "bottom-left" });
         }
       })();
     } else if (!emailChecker.test(formData.email)) {
-      console.log("not valid email");
+      toast.error("Please enter a valid e-mail!", { position: "bottom-left" });
     }
   };
   return (

@@ -2,6 +2,7 @@ import { createContext, useContext, useReducer } from "react";
 import { useAuthContext } from "./AuthContext";
 import axios from "axios";
 import { wishlistReducer } from "../Reducer/WishlistReducer";
+import { toast } from "react-hot-toast";
 
 const WishlistContext = createContext();
 
@@ -37,9 +38,10 @@ const WishlistContextProvider = ({ children }) => {
             type: "ADD_TO_WISHLIST",
             payload: wishlist,
           });
+          toast.success('Product added to wishlist', {position: 'bottom-left'})
             }
         } catch (error) {
-          console.log(error);
+          toast.error("You need to login to add product to wishlist!", { position: "bottom-left" });
         }
       })();
     }
@@ -62,9 +64,10 @@ const WishlistContextProvider = ({ children }) => {
           type: "REMOVE_FROM_WISHLIST",
           payload: wishlist,
         });
+        toast.success('Product removed from wishlist', {position: 'bottom-left'})
         }
       } catch (error) {
-        console.log(error);
+        toast.error("Error occured! Try again later", { position: "bottom-left" });
       }
     })();
   };

@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useReducer, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import { productsReducerFunction } from "../Reducer/ProductsReducer.js";
 import axios from "axios";
 import { filterByPriceRange } from "../Utils/filterByPriceRange.js";
@@ -6,6 +12,7 @@ import { sortByPrice } from "../Utils/sortByPrice.js";
 import { filterByCategory } from "../Utils/filterByCategory.js";
 import { filterByRating } from "../Utils/filterByRating.js";
 import { uniqueCategory } from "../Utils/uniqueCategory.js";
+import { toast } from "react-hot-toast";
 
 const ProductsContext = createContext();
 
@@ -40,7 +47,6 @@ const ProductsContextProvider = ({ children }) => {
   const getFilterByRating = filterByRating(getFilterByCategory, rating);
 
   const filteredProducts = getFilterByRating;
-  console.log(filteredProducts);
 
   useEffect(() => {
     (async () => {
@@ -53,7 +59,7 @@ const ProductsContextProvider = ({ children }) => {
           payload: products,
         });
       } catch (error) {
-        console.log(error);
+        toast.error("Error occured in fetching products! Try again later", { position: "bottom-left" });
       }
     })();
   }, []);
