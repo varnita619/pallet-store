@@ -39,7 +39,7 @@ This folder contains the Mock Backend created for E-Commerce App. It contains di
 
 ![Screenshot (49)](https://user-images.githubusercontent.com/66819239/162056321-24498d95-6595-4779-856b-9ab618c19c41.png)
 
-**Login Listing Page**
+**Login Page**
 
 ![Screenshot (50)](https://user-images.githubusercontent.com/66819239/162056343-62aed034-34ea-4474-be79-e79a8ba6a6ab.png)
 
