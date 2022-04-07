@@ -33,6 +33,8 @@ Make Sure to Create a .env file in backend/config directory and add appropriate 
 
 ## Screen Shots
 
+![Screenshot (48)](https://user-images.githubusercontent.com/66819239/162056368-6c098a36-7f67-4c85-b98a-57621a38ab9c.png)
+
 ![Screenshot (49)](https://user-images.githubusercontent.com/66819239/162056321-24498d95-6595-4779-856b-9ab618c19c41.png)
 
 ![Screenshot (50)](https://user-images.githubusercontent.com/66819239/162056343-62aed034-34ea-4474-be79-e79a8ba6a6ab.png)
@@ -43,7 +45,6 @@ Make Sure to Create a .env file in backend/config directory and add appropriate 
 
 ![Screenshot (53)](https://user-images.githubusercontent.com/66819239/162056360-0f7ce12a-93e6-4b8f-ab1f-9480c89c791b.png)
 
-![Screenshot (48)](https://user-images.githubusercontent.com/66819239/162056368-6c098a36-7f67-4c85-b98a-57621a38ab9c.png)
 
 
 
