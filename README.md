@@ -1,18 +1,18 @@
-# MERN E-COMMERCE TUTORIAL
+# Pallet Store
 
-Hi! My name is **Varnita Makrariya**, I have created this ecommerce website using React and Mock API's.
+Hi! I'm **Varnita Makrariya**, I have created this ecommerce website using React and Mock API's.
 
 # To Use this do as follows:-
 
 # Install Dependencies
 
-**For Backend** - `npm i mockbee`
+**For Backend** - `npx create-react-app my-app --template mockbee-[project-name-here]`
 
 ## E-Commerce Backend
 
 This folder contains the Mock Backend created for E-Commerce App. It contains different API end-points and database configuration for building E-Commerce; so that you can focus on building Frontend.
 
-**For Frontend** - ` npx create-react-app my-app --template mockbee-[project-name-here]`
+**For Frontend** - `npm i`
 
 ## Features
 
