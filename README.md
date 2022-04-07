@@ -1,6 +1,6 @@
 # Pallet Store
 
-Hi! I'm **Varnita Makrariya**, I have created this ecommerce website using React and Mock API's.
+Hi! I'm **Varnita Makrariya**, I have created this ecommerce website using React, CSS and Mock API's.
 
 # To Use this do as follows:-
 
