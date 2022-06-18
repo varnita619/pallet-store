@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import "../NavBar/NavBar.css";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../logo.png";
@@ -6,6 +6,9 @@ import { useAuthContext } from "../../Context/AuthContext";
 import { useCartContext } from "../../Context/CartContext";
 import { useWishlistContext } from "../../Context/WishlistContext";
 import { useProductsContext } from "../../Context/ProductsContext";
+import debounce from "lodash.debounce";
+import { useRef } from "react";
+import {SearchResult} from "../../Components";
 
 function NavBar() {
   const { token, userLogout } = useAuthContext();
@@ -16,7 +19,36 @@ function NavBar() {
     state: { wishlist },
   } = useWishlistContext();
   const navigate = useNavigate();
-  const { active, setActive } = useProductsContext();
+  const {
+    active,
+    setActive,
+    state: { products },
+  } = useProductsContext();
+  console.log(products);
+
+  const [searchWord, setSearchWord] = useState({ query: "" });
+  const [showSearchResult, setShowSearchResult] = useState(false);
+
+  const SearchInputHandler = (event) => {
+    if (/^\s/.test(event.target.value)) {
+      setShowSearchResult(false);
+      return;
+    } else {
+      if (event.target.value.length > 0) {
+        setShowSearchResult(true);
+        setSearchWord((prev) => ({ ...prev, query: event.target.value }));
+      } else {
+        setShowSearchResult(false);
+      }
+    }
+  };
+
+  const debouncedChangeHandler = useCallback(
+    debounce(SearchInputHandler, 500),
+    []
+  );
+
+  const inputRef = useRef();
 
   return (
     <div className="nav-bar">
@@ -39,7 +71,26 @@ function NavBar() {
           </Link>
         </div>
         <div className="search-container">
-          <input type="text" placeholder="search" className="search" />
+          <input
+          ref={inputRef}
+            onChange={debouncedChangeHandler}
+            type="text"
+            placeholder="search"
+            className="search"
+          />
+
+          
+            {/*Search result start  */}
+            {showSearchResult && (
+              <SearchResult
+                searchWord={searchWord}
+                setSearchWord={setSearchWord}
+                setShowSearchResult={setShowSearchResult}
+                inputRef = {inputRef}
+              />
+            )}
+            {/*Search result end  */}
+
         </div>
 
         <div className="nav-bar_section--align-end">

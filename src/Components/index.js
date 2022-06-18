@@ -3,4 +3,5 @@ export {NavBar} from "./NavBar/NavBar";
 export {ProductCard} from "./ProductCard/ProductCard";
 export {SideBar} from "./SideBar/SideBar";
 export {TopBar} from "./TopBar/TopBar";
+export {SearchResult} from "./SearchResult/SearchResult";
 
